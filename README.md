@@ -8,6 +8,7 @@ Weather Search was designed to find cities of your choice and display the curren
 N/A
 
 ## Usage
+Link to site: <a href="https://kr1istin.github.io/Weather-Search/">Weather Search</a> <br>
 Type in only the city name then results will be displayed with current weather and five day forecast.
 
 <img src="assest/Screen Shot 2023-02-26 at 11.25.05 PM.png" alt="picture of weather search website">

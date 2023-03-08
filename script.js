@@ -32,7 +32,7 @@ function callWeatherAPI(city){
             return response.json()
         })
     } // below is the weather URL
-    getWeather(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKEY}`) // *CONTAINS* the lat and lon data *NEEDED* for forecast url
+    getWeather(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${APIKEY}`) // *CONTAINS* the lat and lon data *NEEDED* for forecast url
     .then(function(data) {
         var lat = data[0].lat;
         var lon = data[0].lon;
@@ -49,7 +49,7 @@ function callWeatherAPI(city){
             var cityName = weather.name; // current city name
             var currentWeather = weather.weather[0].main; // current status of city weather
             var icon = weather.weather[0].icon;
-            icon = `http://openweathermap.org/img/w/${icon}.png`;
+            icon = `https://openweathermap.org/img/w/${icon}.png`;
             var temp = weather.main.temp;
             var humid = weather.main.humidity;
             var windSpeed = weather.wind.speed;
@@ -60,7 +60,7 @@ function callWeatherAPI(city){
             humidOf.text(humid + "%");
             windOf.text(windSpeed + "mph");
             dateOf.text(date)  
-            var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${APIKEY}`   
+            var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${APIKEY}`   
             // all forecasted weather values
             getWeather(forecastUrl)
             .then(function(forecast) {
@@ -77,7 +77,7 @@ function callWeatherAPI(city){
                         var windSpeed = forecast.list[i].wind.speed;
                         var humid = forecast.list[i].main.humidity;
                         var icon = forecast.list[i].weather[0].icon;
-                        icon = `http://openweathermap.org/img/w/${icon}.png`;
+                        icon = `https://openweathermap.org/img/w/${icon}.png`;
                         $(`#${id}`).children("h5").text(date);
                         $(`#${id}`).children(".icon").attr("src", icon);
                         $(`#${id}`).children(".temp").text("Temp: " + futureTemp + "℉");
